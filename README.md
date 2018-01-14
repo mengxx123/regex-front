@@ -1,6 +1,6 @@
-# template-front
+# regex-front
 
-> A Vue.js project
+> 正则表达式工具
 
 ## Build Setup
 

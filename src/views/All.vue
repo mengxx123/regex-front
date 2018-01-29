@@ -1,7 +1,6 @@
 <template>
     <my-page title="正则表达式大全">
         <ui-article>
-            <h1>正则表达式大全</h1>
             <h2>校验数字的表达式</h2>
             <pre><span style="color: #008080;"> 1</span> 数字：<span style="color: #ff0000;">^[0-9]*$
 </span><span style="color: #008080;"> 2</span> n位的数字：<span style="color: #ff0000;">^\d{n}$

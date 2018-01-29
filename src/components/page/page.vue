@@ -6,7 +6,19 @@
                 <ui-list-item title="首页" to="/">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
+                <ui-list-item title="练习" to="/practice">
+                    <ui-icon slot="left" value="grade"/>
+                </ui-list-item>
+                <ui-list-item title="语法速查" to="/query">
+                    <ui-icon slot="left" value="grade"/>
+                </ui-list-item>
                 <ui-list-item title="正则表达式大全" to="/all">
+                    <ui-icon slot="left" value="grade"/>
+                </ui-list-item>
+                <!--<ui-list-item title="文本替换工具" to="/replace">-->
+                    <!--<ui-icon slot="left" value="grade"/>-->
+                <!--</ui-list-item>-->
+                <ui-list-item title="教程" to="/course">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
                 <ui-list-item title="关于" to="/about">

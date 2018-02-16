@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 const Home = resolve => require(['@/views/Home'], resolve)
 const All = resolve => require(['@/views/All'], resolve)
+const AllHelp = resolve => require(['@/views/AllHelp'], resolve)
 const About = resolve => require(['@/views/About'], resolve)
 const Query = resolve => require(['@/views/Query'], resolve)
 const Replace = resolve => require(['@/views/Replace'], resolve)
@@ -40,6 +41,10 @@ let routes = [
     {
         path: '/all',
         component: All
+    },
+    {
+        path: '/all/help',
+        component: AllHelp
     },
     {
         path: '*',

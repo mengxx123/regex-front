@@ -112,6 +112,12 @@
                 </tr>
                 </tbody>
             </table>
+            <h2>常用反义词</h2>
+            <table cellspacing="0" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">代码/语法</th><th scope="col">说明</th></tr></thead><tbody><tr><td><span class="code">i</span></td><td><span class="desc">表示在进行匹配的时候不区分大小写</span></td></tr><tr><td><span class="code">m</span></td><td><span class="desc">多行识别.即将字符串视为多行,不管是那行都能匹配</span></td></tr><tr><td><span class="code">s</span></td><td><span class="desc">将字符串视为单行,转义回车换行符作为普通字符</span></td></tr><tr><td><span class="code">g</span></td><td><span class="desc">表示全局匹配</span></td></tr><tr><td><span class="code">x</span></td><td><span class="desc">将模式中的空白忽略</span></td></tr><tr><td><span class="code">A</span></td><td><span class="desc">强制从目标字符串开头匹配</span></td></tr><tr><td><span class="code">D</span></td><td><span class="desc">强制尾部无任何内容.若使用$限制结尾字符,则不允许结尾有换行</span></td></tr><tr><td><span class="code">U</span></td><td><span class="desc">禁止贪婪匹配,只匹配最近的一个字符串(不重复匹配)</span></td></tr><tr><td><span class="code">e</span></td><td><span class="desc">配合PHP函数preg_replace()使用,可以把匹配来的字符串当作正则表达式执行</span></td></tr></tbody></table>
+            
 
         </ui-article>
     </my-page>

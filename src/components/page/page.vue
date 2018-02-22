@@ -3,16 +3,16 @@
         <div slot="drawer">
             <ui-appbar title=""></ui-appbar>
             <ui-list @itemClick="toggle()">
-                <ui-list-item title="首页" to="/">
+                <ui-list-item title="测试" to="/">
+                    <ui-icon slot="left" value="grade"/>
+                </ui-list-item>
+                <ui-list-item title="正则大全" to="/all">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
                 <ui-list-item title="练习" to="/practice">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
                 <ui-list-item title="语法速查" to="/query">
-                    <ui-icon slot="left" value="grade"/>
-                </ui-list-item>
-                <ui-list-item title="正则表达式大全" to="/all">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
                 <!--<ui-list-item title="文本替换工具" to="/replace">-->

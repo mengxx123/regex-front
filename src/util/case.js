@@ -11,8 +11,8 @@ history: v1.0 正则表达式测试工具上线
             v1.5 2017-10-29 彻底重写测试功能解决文本过长时产生的高亮bug
 notice: 由于我们使用的是js的正则引擎，所以暂时还不能支持逆序环视
 demo@qq.com
-tool-lu@vip.qq.com
-tool+lu@gmail.com
+tool-yunser@vip.qq.com
+tool+yunser@gmail.com
 demo@live.com
 127.0.0.1
 http://yunser.com/

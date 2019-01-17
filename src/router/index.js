@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const Home = resolve => require(['@/views/Home'], resolve)
+const Index = resolve => require(['@/views/Index'], resolve)
 const All = resolve => require(['@/views/All'], resolve)
 const AllHelp = resolve => require(['@/views/AllHelp'], resolve)
-const About = resolve => require(['@/views/About'], resolve)
 const Query = resolve => require(['@/views/Query'], resolve)
 const Replace = resolve => require(['@/views/Replace'], resolve)
 const Practice = resolve => require(['@/views/Practice'], resolve)
@@ -19,8 +19,8 @@ let routes = [
         component: Home
     },
     {
-        path: '/about',
-        component: About
+        path: '/index',
+        component: Index
     },
     {
         path: '/course',

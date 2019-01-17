@@ -22,3 +22,10 @@ pre {
     bottom: 0;
     opacity: 0;
 }
+.ui-page-body {
+    -webkit-overflow-scrolling : touch;
+}
+input,
+textarea {
+  -webkit-appearance: none;
+}

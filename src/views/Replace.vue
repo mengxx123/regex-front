@@ -1,18 +1,20 @@
 <template>
     <my-page title="文本替换">
-        <section class="input-box">
-            <div>
-                <ui-text-field v-model="regex" hintText="输入正则表达式" multiLine :rows="2" :rowsMax="2"/>
-            </div>
-            <div>
-                <ui-text-field v-model="text" hintText="输入要匹配的文本" multiLine :rows="2" :rowsMax="4"/>
-            </div>
-            <div>
-                <ui-raised-button class="btn" label="匹配" primary @click="handle"/>
-                <ui-raised-button class="btn" label="重新输入" @click="clear"/>
-            </div>
-            <div class="regex-result" v-html="result"></div>
-        </section>
+        <div class="common-container container">
+            <section class="input-box">
+                <div>
+                    <ui-text-field v-model="regex" hintText="输入正则表达式" multiLine :rows="2" :rowsMax="2"/>
+                </div>
+                <div>
+                    <ui-text-field v-model="text" hintText="输入要匹配的文本" multiLine :rows="2" :rowsMax="4"/>
+                </div>
+                <div>
+                    <ui-raised-button class="btn" label="匹配" primary @click="handle"/>
+                    <ui-raised-button class="btn" label="重新输入" @click="clear"/>
+                </div>
+                <div class="regex-result" v-html="result"></div>
+            </section>
+        </div>
     </my-page>
 </template>
 

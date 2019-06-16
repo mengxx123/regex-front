@@ -1,31 +1,33 @@
 <template>
     <my-page title="正则表达式大全" :page="page">
-        <ui-article>
-            <h2>我的收藏</h2>
-            <div v-if="!listCollection.length">
-                暂时没有收藏~
-            </div>
-            <ul class="regex-list">
-                <li class="item" v-for="item in listCollection">
-                    {{ item.title }}：<code>{{ item.regex }}</code>
-                    <a class="btn btn-copy" :data-clipboard-text="item.regex" href="javascript:;">复制</a>
-                    <span class="btn" @click="test(item.regex)">测试</span>
-                    <span class="btn" @click="remove(item)">删除</span>
-                </li>
-            </ul>
-
-            <div v-for="group in groups">
-                <h2>{{ group.name }}</h2>
+        <div class="common-container container">
+            <ui-article>
+                <h2>我的收藏</h2>
+                <div v-if="!listCollection.length">
+                    暂时没有收藏~
+                </div>
                 <ul class="regex-list">
-                    <li class="item" v-for="item in group.list">
+                    <li class="item" v-for="item in listCollection">
                         {{ item.title }}：<code>{{ item.regex }}</code>
                         <a class="btn btn-copy" :data-clipboard-text="item.regex" href="javascript:;">复制</a>
                         <span class="btn" @click="test(item.regex)">测试</span>
-                        <span class="btn" @click="collection(item)">收藏</span>
+                        <span class="btn" @click="remove(item)">删除</span>
                     </li>
                 </ul>
-            </div>
-        </ui-article>
+
+                <div v-for="group in groups">
+                    <h2>{{ group.name }}</h2>
+                    <ul class="regex-list">
+                        <li class="item" v-for="item in group.list">
+                            {{ item.title }}：<code>{{ item.regex }}</code>
+                            <a class="btn btn-copy" :data-clipboard-text="item.regex" href="javascript:;">复制</a>
+                            <span class="btn" @click="test(item.regex)">测试</span>
+                            <span class="btn" @click="collection(item)">收藏</span>
+                        </li>
+                    </ul>
+                </div>
+            </ui-article>
+        </div>
     </my-page>
 </template>
 

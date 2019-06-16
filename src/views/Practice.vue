@@ -1,47 +1,49 @@
 <template>
     <my-page title="练习">
-        <div class="card">
-            <div class="">
-                <div class="btns">
-                    <ui-raised-button class="btn" label="上一题" @click="prev" :disabled="examIndex === 0"/>
-                    <ui-raised-button class="btn" label="下一题" primary @click="submit" :disabled="examIndex === exams.length - 1"/>
-                    <ui-raised-button class="btn" label="提示" @click="tip"/>
-                </div>
-                <div>题目：{{ exam.title }}</div>
-                难度：
-                <div class="rate">
-                    <ui-icon class="ic" value="star" :color="starColor(0)" />
-                    <ui-icon class="ic" value="star" :color="starColor(1)" />
-                    <ui-icon class="ic" value="star" :color="starColor(2)" />
-                    <ui-icon class="ic" value="star" :color="starColor(3)" />
-                    <ui-icon class="ic" value="star" :color="starColor(4)" />
-                </div>
-                <div>
-                    <ui-text-field v-model="regex" hintText="输入正则表达式" multiLine :rows="2" :rowsMax="2"/>
-                </div>
-                <div>
-                    <h3 class="case-type">你要匹配到的内容：</h3>
-                    <ul class="case-list">
-                        <li class="item" v-for="testCase in exam.match">
-                            {{ testCase }}
-                            <ui-icon class="icon-success" value="check" v-if="isMatch(testCase)" />
-                            <ui-icon class="icon-error" value="close" v-else />
-                        </li>
-                    </ul>
-                    <h3 class="case-type">你不能匹配到的内容：</h3>
-                    <ul class="case-list">
-                        <li class="item" v-for="testCase in exam.noMatch">
-                            {{ testCase }}
-                            <ui-icon class="icon-error" value="close" v-if="isMatch(testCase)" />
-                            <ui-icon class="icon-success" value="check" v-else />
-                        </li>
-                    </ul>
+        <div class="common-container container">
+            <div class="card">
+                <div class="">
+                    <div class="btns">
+                        <ui-raised-button class="btn" label="上一题" @click="prev" :disabled="examIndex === 0"/>
+                        <ui-raised-button class="btn" label="下一题" primary @click="submit" :disabled="examIndex === exams.length - 1"/>
+                        <ui-raised-button class="btn" label="提示" @click="tip"/>
+                    </div>
+                    <div>题目：{{ exam.title }}</div>
+                    难度：
+                    <div class="rate">
+                        <ui-icon class="ic" value="star" :color="starColor(0)" />
+                        <ui-icon class="ic" value="star" :color="starColor(1)" />
+                        <ui-icon class="ic" value="star" :color="starColor(2)" />
+                        <ui-icon class="ic" value="star" :color="starColor(3)" />
+                        <ui-icon class="ic" value="star" :color="starColor(4)" />
+                    </div>
+                    <div>
+                        <ui-text-field v-model="regex" hintText="输入正则表达式" multiLine :rows="2" :rowsMax="2"/>
+                    </div>
+                    <div>
+                        <h3 class="case-type">你要匹配到的内容：</h3>
+                        <ul class="case-list">
+                            <li class="item" v-for="testCase in exam.match">
+                                {{ testCase }}
+                                <ui-icon class="icon-success" value="check" v-if="isMatch(testCase)" />
+                                <ui-icon class="icon-error" value="close" v-else />
+                            </li>
+                        </ul>
+                        <h3 class="case-type">你不能匹配到的内容：</h3>
+                        <ul class="case-list">
+                            <li class="item" v-for="testCase in exam.noMatch">
+                                {{ testCase }}
+                                <ui-icon class="icon-error" value="close" v-if="isMatch(testCase)" />
+                                <ui-icon class="icon-success" value="check" v-else />
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="mask" v-if="false">
-            <div class="success-box">
+            <div class="mask" v-if="false">
+                <div class="success-box">
 
+                </div>
             </div>
         </div>
     </my-page>

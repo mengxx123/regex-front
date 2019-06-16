@@ -1,6 +1,8 @@
 <template>
     <my-page title="教程">
-        <div>开发中。。。</div>
+        <div class="common-container container">
+            <div>开发中。。。</div>
+        </div>
     </my-page>
 </template>
 

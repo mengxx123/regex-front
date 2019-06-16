@@ -1,38 +1,40 @@
 <template>
     <my-page title="正则表达式测试">
-        <div id="preset_regex">
-            <h4>常用正则：</h4>
-            <ul class="regex-list">
-                <li class="item" v-for="item in regexList">
-                    <a href="#" @click.prevent="setRegex(item.regex)">{{ item.title }}</a>
-                </li>
-                <li class="item">
-                    <router-link to="/all">更多</router-link>
-                </li>
-            </ul>
+        <div class="common-container container">
+            <div id="preset_regex">
+                <h4>常用正则：</h4>
+                <ul class="regex-list">
+                    <li class="item" v-for="item in regexList">
+                        <a href="#" @click.prevent="setRegex(item.regex)">{{ item.title }}</a>
+                    </li>
+                    <li class="item">
+                        <router-link to="/all">更多</router-link>
+                    </li>
+                </ul>
+            </div>
+            <div class="regex-flags" id="regex_flags">
+                <label><input class="regex-flag" type="checkbox" value="g" checked> 全部(g)</label>
+                <label><input class="regex-flag" type="checkbox" value="i"> 不区分大小写(i)</label>
+                <label><input class="regex-flag" type="checkbox" value="m"> 多行 (m)</label>
+                <label><input class="regex-flag" type="checkbox" value="s"> 单行 (s)</label>
+            </div>
+            <div class="regex-wrapper">
+                <textarea id="regex_input" cols="100" rows="3" tabindex="1">\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}</textarea>
+            </div>
+            <div class="btns">
+                <ui-raised-button class="btn btn-copy" primary label="复制" />
+                <!-- <ui-raised-button class="btn" label="匹配" primary @click="handle"/> -->
+                <ui-raised-button class="btn" label="重新输入" @click="clear"/>
+                <ui-raised-button class="btn" label="生成代码" @click="generate" />
+                <ui-raised-button class="btn btn-copy" label="添加测试用例" @click="addCase" />
+                <ui-raised-button class="btn" label="收藏" @click="collection" />
+            </div>
+            <div class="str-wrapper">
+                <textarea id="str_input" cols="100" rows="10" tabindex="2"></textarea>
+            </div>
+            <h3>共找到 <var id="result_count">0</var> 处匹配结果</h3>
+            <pre id="result_content"></pre>
         </div>
-        <div class="regex-flags" id="regex_flags">
-            <label><input class="regex-flag" type="checkbox" value="g" checked> 全部(g)</label>
-            <label><input class="regex-flag" type="checkbox" value="i"> 不区分大小写(i)</label>
-            <label><input class="regex-flag" type="checkbox" value="m"> 多行 (m)</label>
-            <label><input class="regex-flag" type="checkbox" value="s"> 单行 (s)</label>
-        </div>
-        <div class="regex-wrapper">
-            <textarea id="regex_input" cols="100" rows="3" tabindex="1">\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}</textarea>
-        </div>
-        <div class="btns">
-            <ui-raised-button class="btn btn-copy" primary label="复制" />
-            <!-- <ui-raised-button class="btn" label="匹配" primary @click="handle"/> -->
-            <ui-raised-button class="btn" label="重新输入" @click="clear"/>
-            <ui-raised-button class="btn" label="生成代码" @click="generate" />
-            <ui-raised-button class="btn btn-copy" label="添加测试用例" @click="addCase" />
-            <ui-raised-button class="btn" label="收藏" @click="collection" />
-        </div>
-        <div class="str-wrapper">
-            <textarea id="str_input" cols="100" rows="10" tabindex="2"></textarea>
-        </div>
-        <h3>共找到 <var id="result_count">0</var> 处匹配结果</h3>
-        <pre id="result_content"></pre>
 
         <ui-drawer class="case-box" :open="caseVisible" right :docked="false" @close="toggle2()">
             <ui-appbar class="appbar" title="测试用例">
